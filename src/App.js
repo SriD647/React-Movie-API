@@ -29,15 +29,16 @@ export default function App() {
 
   const getMovies = async (searchTerm) => {
     try {
-      const response = await fetch(
-        `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}`
-      );
-      const data = await response.json();
-      setMovies(data);
+        const response = await fetch(
+            `https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}*`
+        );
+        const data = await response.json();
+        setMovies(data);
     } catch (error) {
-      console.error(error);
+        console.error(error);
     }
-  };
+};
+
 
   const reloadPage = () => {
     window.location.reload();
@@ -45,20 +46,20 @@ export default function App() {
 
   useEffect(() => {
     // getMovie("borat");
-    getMovies("Batman");
+    getMovies("the a");
   }, []);
 
   return (
     <div className="App">
       <h1 id="header" onClick={reloadPage}>Welcome to Search-A-Film!</h1>
       <nav className="search-container">
-        <Form getMovie={getMovie} />
+        {/* <Form getMovie={getMovie} /> */}
         <SearchForm getMovies={getMovies} />
       </nav>{" "}
       <h2>{error("")} </h2>
       <br />
       <div className="movie-container">
-        <MovieDisplay movie={movie} />
+        {/* <MovieDisplay movie={movie} /> */}
         <MovieList movies={movies} />
       </div>
     </div>

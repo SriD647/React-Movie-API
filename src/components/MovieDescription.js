@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function MovieDescription({ movie, onClose }) {
+export default function MovieDescription({ movie }) {
   const apiKey = "98e3fb1f";
   const [item, setItem] = useState(movie);
 
@@ -16,18 +16,17 @@ export default function MovieDescription({ movie, onClose }) {
     }
   };
 
+  
+
   useEffect(() => {
     getMovie();
   }, []);
 
   return (
     <div className="description">
-      <button className="close-button" onClick={onClose}>
-        Close
-      </button>
-      <nav style={{ textAlign: "left" }}>
-        <p>
-          <strong>Type:</strong> <i>{movie.Type}</i>
+      <nav className="details" style={{ textAlign: "left" }}>
+      <p>
+       <strong> {movie.Title} </strong> 
         </p>
         <p>
           <strong>Year:</strong> <i>{movie.Year}</i>
@@ -41,11 +40,6 @@ export default function MovieDescription({ movie, onClose }) {
         <p>
           {" "}
           <strong>Actors:</strong> <i>{item.Actors} </i>
-        </p>
-
-        <p>
-          {" "}
-          <strong>IMDb Rating:</strong> <i>{item.imdbRating}</i>
         </p>
         <p>
           <strong>Stream:</strong>{" "}

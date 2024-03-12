@@ -54,7 +54,7 @@ body {
 }
 
 .movie-list {
-  font-size: 15px;
+  font-size: 17px;
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -73,33 +73,58 @@ body {
 }
 
 #movie img {
-  max-height: 400px;
-  max-width: 250px;
+  max-height: 85%;
+  max-width: 90%;
   border: 7px solid rgb(230, 55, 55);
 }
 
-.description {
-  width: 100%;
-  max-height: 390px;
-  max-width: 250px;
+.modal {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.800);
-  border: 7px solid rgb(0, 0, 0, 0.800);
-  display: none;
-  margin-left: 10px;
-  margin-top: 48px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.879); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-y: auto;
 }
 
-#movie:hover .description {
-  display: block;
+
+.modal::-webkit-scrollbar {
+  width: 4px;
 }
 
-.close-button {
-  margin-left: 190px;
-  background-color: grey;
+.modal-content {
+  display: flex;
+  flex-direction: column;
 }
+
+.modal::-webkit-scrollbar-thumb {
+  background: rgb(240, 206, 122);
+}
+
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.close {
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background-color: rgb(240, 206, 122);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2; 
+}
+
 
 .button {
   background-color: #8d6e08;
@@ -113,6 +138,7 @@ body {
 .button:hover {
   background-color: #45a049;
 }
+
 
 @media (max-width: 767px) {
   #header {

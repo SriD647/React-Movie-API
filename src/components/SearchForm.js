@@ -23,7 +23,7 @@ export default function Form({ getMovies }) {
       }}
     >
       <label style={{ marginRight: "10px" }}>
-        Search for film/series list:{" "}
+        Search for film/series:{" "}
       </label>
       <input
         name="searchTerm"
