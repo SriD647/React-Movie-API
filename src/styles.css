@@ -59,6 +59,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 20px;
+  position: relative;
 }
 
 .movie-list #title {
@@ -79,8 +80,25 @@ body {
 
 .description {
   width: 100%;
+  max-height: 390px;
   max-width: 250px;
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.800);
+  border: 7px solid rgb(0, 0, 0, 0.800);
+  display: none;
+  margin-left: 10px;
+  margin-top: 48px;
+}
+
+#movie:hover .description {
+  display: block;
+}
+
+.close-button {
+  margin-left: 190px;
+  background-color: grey;
 }
 
 .button {

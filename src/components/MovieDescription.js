@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import MovieDisplay from "./MovieDisplay";
 
-export default function MovieDescription({ movie }) {
+export default function MovieDescription({ movie, onClose }) {
   const apiKey = "98e3fb1f";
   const [item, setItem] = useState(movie);
+
   const getMovie = async () => {
     try {
       const response = await fetch(
@@ -22,10 +22,10 @@ export default function MovieDescription({ movie }) {
 
   return (
     <div className="description">
+      <button className="close-button" onClick={onClose}>
+        Close
+      </button>
       <nav style={{ textAlign: "left" }}>
-        <p>
-          <strong>Title:</strong> <i>{movie.Title}</i>
-        </p>
         <p>
           <strong>Type:</strong> <i>{movie.Type}</i>
         </p>
@@ -49,12 +49,12 @@ export default function MovieDescription({ movie }) {
         </p>
         <p>
           <strong>Stream:</strong>{" "}
-          <a  href={`https://movie4kto.net/search/${movie.Title.toLowerCase().split(" ").join("-")}`}target="_blank"> Link 1
+          <a href={`https://movie4kto.net/search/${movie.Title.toLowerCase().split(" ").join("-")}`} target="_blank"> Link 1
           </a>
         </p>
         <p>
           <strong>Stream:</strong>{" "}          
-          <a  href={`https://www2.solarmovie.cr/search/${movie.Title.toLowerCase().split(" ").join("%20")}/`}target="_blank"> Link 2
+          <a href={`https://www2.solarmovie.cr/search/${movie.Title.toLowerCase().split(" ").join("%20")}/`} target="_blank"> Link 2
           </a>
         </p>
       </nav>
