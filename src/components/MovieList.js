@@ -2,7 +2,7 @@ import MovieDisplay from "./MovieDisplay";
 import { error } from "../App.js";
 
 export default function MovieList({ movies }) {
-  const loading = () => error("Invalid film name");
+  const loading = () => error("Film not found");
   const loaded = () => (
     <ul className="movie-list">
       {movies.Search.map((movie) => (

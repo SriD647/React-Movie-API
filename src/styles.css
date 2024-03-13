@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgb(19, 1, 1);
+  background-color: rgb(50, 44, 44);
 }
 
 @keyframes floating {
@@ -24,7 +24,7 @@ body {
 #header {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 50px;
-  animation: floating 2s infinite;
+  /* animation: floating 2s infinite; */
   margin-top: -2px;
   color: rgb(240, 206, 122);
 }
@@ -45,16 +45,9 @@ body {
   transform: scale(1.03);
 }
 
-.Form {
-  margin-right: 10px;
-}
-
-.SearchForm {
-  margin-left: 10px;
-}
 
 .movie-list {
-  font-size: 17px;
+  font-size: 18px;
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -112,6 +105,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-left: 0.5vh;
 }
 
 .close {
@@ -137,6 +131,48 @@ body {
 
 .button:hover {
   background-color: #45a049;
+}
+
+
+.navbar {
+  display: flex;
+  background-color: rgba(17, 12, 12, 0.96);
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  z-index: 200;
+  padding: 10px 20px; /* Adjust padding as needed */
+}
+
+#header {
+  margin: 0; /* Reset margin */
+  color: rgb(240, 206, 122);
+  font-size: 40px; /* Adjust font size as needed */
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin-right: 200px
+}
+
+.list li {
+  margin-right: 40px;
+  cursor: pointer;
+  background-color: rgb(240, 206, 122);
+  color: black;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.list li:hover {
+  transform: scale(1.1); 
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
 }
 
 

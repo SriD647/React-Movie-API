@@ -13,7 +13,7 @@ export default function MovieDisplay({ movie }) {
     setDesc(false);
   }
 
-  const loading = () => error("Invalid film name");
+  // const loading = () => error("Invalid film name");
 
   const loaded = () => (
     <div id="movie" style={{ position: 'relative' }}>
@@ -32,5 +32,5 @@ export default function MovieDisplay({ movie }) {
     return null;
   }
 
-  return movie && movie.Title ? loaded() : loading();
+  return movie && movie.Title ? loaded() : null;
 }

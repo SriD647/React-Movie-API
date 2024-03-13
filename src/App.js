@@ -4,6 +4,7 @@ import MovieDisplay from "./components/MovieDisplay";
 import MovieList from "./components/MovieList";
 import "./styles.css";
 import SearchForm from "./components/SearchForm";
+import NavBar from "./components/NavBar";
 
 export function error(string) {
   return `${string}`;
@@ -39,11 +40,7 @@ export default function App() {
     }
 };
 
-
-  const reloadPage = () => {
-    window.location.reload();
-  };
-
+  
   useEffect(() => {
     // getMovie("borat");
     getMovies("the a");
@@ -51,10 +48,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 id="header" onClick={reloadPage}>Welcome to Search-A-Film!</h1>
+      <NavBar getMovies={getMovies} />
       <nav className="search-container">
         {/* <Form getMovie={getMovie} /> */}
-        <SearchForm getMovies={getMovies} />
+        {/* <SearchForm getMovies={getMovies} /> */}
       </nav>{" "}
       <h2>{error("")} </h2>
       <br />
