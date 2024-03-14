@@ -1,5 +1,6 @@
 import SearchForm from "./SearchForm";
 import { useState } from "react";
+import Logo from "./Logo";
 
 export default function NavBar({ getMovies }) {
   
@@ -21,9 +22,9 @@ export default function NavBar({ getMovies }) {
       };
 
     return (
-    <nav class="navbar">
-        <h1 id="header">Film Loka</h1>
 
+    <div class="navbar">
+        <Logo className="logo" onClick={reloadPage} />
           <ul className="list">
             <li onClick={reloadPage}>Home</li>
             <li>New</li>
@@ -33,6 +34,7 @@ export default function NavBar({ getMovies }) {
         </ul>    
 
       <form
+      className="form"
       onSubmit={handleSubmit}
       style={{
         display: "flex",
@@ -50,6 +52,6 @@ export default function NavBar({ getMovies }) {
       />
       <input className="button" type="submit" />
     </form>
-    </nav>
+    </div>
     )
 }
