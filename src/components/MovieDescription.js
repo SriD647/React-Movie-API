@@ -1,32 +1,12 @@
 import { useState, useEffect } from "react";
 
 export default function MovieDescription({ movie, item }) {
-  // const apiKey = "98e3fb1f";
-  // const [item, setItem] = useState(movie);
-
-  // const getMovie = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       `https://www.omdbapi.com/?apikey=${apiKey}&i=${movie.imdbID}`
-  //     );
-  //     const data = await response.json();
-  //     setItem(data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
-  
-
-  // useEffect(() => {
-  //   getMovie();
-  // }, []);
 
   return (
     <div className="description">
-      <nav className="details" style={{ textAlign: "left" }}>
+      <nav className="details" style={{ textAlign: "center" }}>
       <p>
-       <strong> {movie.Title} </strong> 
+       <strong id="strong"> {movie.Title} </strong> 
         </p>
         <p>
           <strong>Year:</strong> <i>{movie.Year}</i>
